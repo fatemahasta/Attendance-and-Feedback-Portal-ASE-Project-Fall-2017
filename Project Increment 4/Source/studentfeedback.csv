@@ -1,0 +1,4 @@
+first_name,last_name,student_id,course3,comment,feedback,loc,sentiment,score
+Fatema,Hasta,16247903,Advanced Operating Systems,mbhmb,good,"343 W 48th St, Kansas City, MO 64112, USA",positive,0.748138
+Sridevi,Mallipudi,56738290,Advanced Operating Systems,great tutorial,average,"Miller Nichols Library and Learning Center, 800 E 51st St, Kansas City, MO 64110, USA",negative,-0.433656
+Fatema,Hasta,42537728,Advanced Operating Systems,great tutorial,good,"Miller Nichols Library and Learning Center, 800 E 51st St, Kansas City, MO 64110, USA",positive,0.748138

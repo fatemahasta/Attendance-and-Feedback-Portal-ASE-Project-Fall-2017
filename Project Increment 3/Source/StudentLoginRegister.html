@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Navigation CSS-->
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>UMKC Attendance & Feedback Portal</title>
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/freelancer.min.css" rel="stylesheet">
+    <!--Navigation CSS-->
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/form-elements.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <script src = "//connect.facebook.net/en_US/sdk.js"></script>
+
+    <style type="text/css">
+        #customBtn:hover {
+            cursor: pointer;
+        }
+       body{
+           background-color:#18bc9c;
+       }
+        .nav-item{
+            float :left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">UMKC Attendance & Feedback Portal</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Top content -->
+<div class="top-content" ng-app="demoMongo">
+
+    <div class="inner-bg">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Login to our site</h3>
+                                <p>Enter username and password to log on:</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-lock"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom" ng-controller="StudentLoginController">
+                            <form role="form" class="login-form" name="myForm"
+                                  onsubmit="return validate()">
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-username">Student Id </label>
+                                    <input ng-model="username" type="text" name="studentId" placeholder="Student ID" class="form-username form-control" id="form-username">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Password</label>
+                                    <input ng-model="password" type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
+                                </div>
+                                <button type="submit" class="btn" ng-click="login()">Sign in!</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-sm-1 middle-border"></div>
+                <div class="col-sm-1"></div>
+
+                <div class="col-sm-5">
+
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Sign up now</h3>
+                                <p>Fill in the form below to get instant access:</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-pencil"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom" ng-controller="StudentRegisterController">
+                            <form role="form" class="registration-form" name="regmyForm"
+                                  onsubmit=" return registration()">
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-first-name">Student ID</label>
+                                    <input ng-model="studentId" type="text" name="studentId" placeholder="Student ID" class="form-first-name form-control" id="form-first-name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-email">Email</label>
+                                    <input ng-model="emailId" type="email" name="email" placeholder="Email..." class="form-email form-control" id="form-email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-user-name">Contact Number</label>
+                                    <input ng-model="contactNumber" type="text" name="contactNumber" placeholder="Contact Number"
+                                           class="form-username form-control" id="form-user-name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-pwd">Password</label>
+                                    <input ng-model="password" type="password" name="pwd" placeholder="Password..."
+                                           class="form-pwd form-control" id="form-pwd">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-repwd">Retype Password</label>
+                                    <input ng-model="rePassword" type="password" name="repwd" placeholder="Retype Password..."
+                                           class="form-repwd form-control" id="form-repwd">
+                                </div>
+                                <button type="submit" class="btn" ng-click="register()">Sign me up!</button>
+                            </form>
+                        </div>
+                        <div id="signup-success"></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Angular -->
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular.js"></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-resource.js"></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-sanitize.js"></script>
+
+<script type="text/javascript" src="index.js"></script>
+
+<!-- Javascript -->
+<script src="assets/js/jquery-1.11.1.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.backstretch.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script src="assets/js/placeholder.js"></script>
+<script type="text/javascript">
+    var valid = false;
+    function validate() {
+        var msg = "";
+        var uname = document.myForm.studentId.value;
+        var pwd = document.myForm.password.value;
+        if (uname.length == 0 && pwd.length == 0)
+            msg = msg + "Please enter username and password \n";
+        else if (pwd.length == 0)
+            msg = msg + "Please enter password \n";
+        else if (uname.length == 0)
+            msg = msg + "Please enter username \n";
+        if (msg.length > 0) {
+            window.alert(msg);
+            valid = false;
+        }
+        else
+            valid = true;
+        return valid;
+    }
+    function registration() {
+        var msg = "";
+        var fname = document.regmyForm.studentId.value;
+        var contact = document.regmyForm.contactNumber.value;
+        var email = document.regmyForm.email.value;
+
+        var pwd = document.regmyForm.pwd.value;
+        var repwd = document.regmyForm.repwd.value;
+        if (fname.length == 0 || contact.length == 0 || email.length == 0 || pwd.length == 0 || repwd.length == 0)
+            msg = msg + "Please enter all the fields to have successful registration \n";
+        if (msg.length > 0) {
+            window.alert(msg);
+            valid = false;
+        }
+        else
+            valid = true;
+        return valid;
+    }
+    function logInAct() {
+        if (document.getElementById("username").value.length > 0 && document.getElementById("password").value.length > 0) {
+        }
+        else
+            alert("Give all details");
+    }
+
+</script>
+
+</body>
+
+</html>

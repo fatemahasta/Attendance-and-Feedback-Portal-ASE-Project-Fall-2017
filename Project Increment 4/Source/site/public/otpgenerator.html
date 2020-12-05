@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:image" content="https://yeojz.github.io/otplib/otplib.png" />
+  <meta property="og:title" content="OTP for JavaScript | otplib" />
+  <meta property="og:description" content="JavaScript One Time Password library using HOTP / TOTP / Google Authenticator" />
+  <meta property="og:url" content="https://yeojz.github.io/otplib">
+  <meta name="keywords" content="otplib" />
+  <link rel="shortcut icon" href="https://yeojz.github.io/otplib/favicon.ico" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://yeojz.github.io/otplib/css/style.css">
+  <title>OTP Authentication Page</title>
+</head>
+<body>
+<div id="root columns">
+  <div class='site-constraint'>
+    <span class='lib-version'>v1.0.0</span>
+    <header class="site-header">
+      <h1>
+        This is my OTP verification site
+      </h1>
+    </header>
+    <section class="tabs">
+      <ul>
+        <li class="tab-item is-active" data-tab-id='secret'>
+          <a>
+            <span class="icon is-small"><i class="fa fa-user-secret"></i></span>
+            Get Secret
+          </a>
+        </li>
+        <li class="tab-item" data-tab-id='token'>
+          <a>
+            <span class="icon is-small"><i class="fa fa-key"></i></span>
+            Get Token
+          </a>
+        </li>
+        <li class="tab-item" data-tab-id='verify'>
+          <a>
+            <span class="icon is-small"><i class="fa fa-eye"></i></span>
+            Verify
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class='tab-contents'>
+      <article class='tab-item secret is-active'>
+        <h3>Secret</h3>
+        <pre><code class="otp-secret bash"></code></pre>
+
+        <div class="otp-qrcode">
+          <h3>QR Code</h3>
+          <div class="qrcode"></div>
+          <p>
+            Scan this image with Google Authenticator or another two-factor authentication app.
+          </p>
+        </div>
+      </article>
+      <article class='tab-item token'>
+        <div>Next token in: <span class="otp-countdown"></span></div>
+        <pre><code class="otp-token"></code></pre>
+
+      </article>
+      <article class='tab-item verify'>
+        <div class="otp-verify">
+          <input
+            class="otp-verify-input"
+            placeholder="000000"
+            maxlength="6"
+            value="" />
+          <button class="button otp-verify-send">Verify</button>
+          <div class="otp-verify-result">
+            <i class='fa'></i>
+            <span class='text'></span>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</div>
+
+<script src="https://yeojz.github.io/otplib/js/qrcode.min.js"></script>
+<script src="https://yeojz.github.io/otplib/lib/otplib-browser.js"></script>
+<script src="https://yeojz.github.io/otplib/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Faculty Login Page</title>
+    <!-- CORE CSS-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.1/angular.min.js"
+            type="application/javascript"></script>
+
+
+
+    <style type="text/css">
+        html,
+        body {
+            height: 100%;
+            background-position: inherit;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        html {
+            display: table;
+            margin: auto;
+        }
+        .div2 {
+            width: 400.600px;
+            height: 605.600px;
+            padding: 10.500px;
+            background-color: white;
+            border: 1px solid white;
+        }
+        body {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .margin {
+            margin: 0 !important;
+        }
+    </style>
+</head>
+
+<body class="blue" ng-app ng-controller="LoginController">
+<div class="container">
+    <div id="login-page" class="row">
+        <div class="div2">
+            <form class="login-form" name="myForm" onsubmit="return validate()" method="post" action="home.html">
+                <div class="row">
+                    <div class="input-field col s12 center">
+                        <img src="https://www.umkc.edu/mcom/resources/logos/academic-level/stacked/sce/sce-stack_web_200px.jpg" alt="" class="responsive-img valign profile-image-login">
+                        <p class="center login-form-text">UMKC Attendance & Feedback Portal</p>
+                    </div>
+                </div>
+                <div class="row margin">
+                    <div class="input-field col s12">
+                        <i class="mdi-communication-email prefix"></i>
+                        <input ng-model="user.emailId" class="validate" id="emailId" name="emailId" type="text">
+                        <label for="emailId" data-error="wrong" data-success="right" class="center-align">Email</label>
+                    </div>
+                </div>
+                <div class="row margin">
+                    <div class="input-field col s12">
+                        <i class="mdi-action-lock-outline prefix"></i>
+                        <input ng-model="user.password"  id="password" type="password" name="password">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m12 l12  login-text">
+                        <input type="checkbox" id="remember-me" />
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button type="submit" ng-click="login(user.studentId,user.password)" value="Login" class="btn waves-effect waves-light col s12">Login</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6 m6 l6">
+                        <p class="margin medium-small"><a href="register.html">Register Now!</a></p>
+                    </div>
+                    <div class="input-field col s6 m6 l6">
+                        <p class="margin right-align medium-small"><a href="forgot-password.html">Forgot password?</a></p>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<center>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Post Page - Responsive -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:250px"
+         data-ad-client="ca-pub-5104998679826243"
+         data-ad-slot="3470684978"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</center>
+
+
+
+<!-- ================================================
+  Scripts
+  ================================================ -->
+
+<!-- jQuery Library -->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!--materialize js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-27820211-3', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<script>
+    function LoginController($scope) {
+        $scope.logins = [];
+        $scope.login = function (user, pwd) {
+            localStorage.setItem("password", pwd);
+            localStorage.setItem("username", user);
+            $scope.logins.push(localStorage.getItem("name") + " was logged in.");
+        };
+    }
+</script>
+<script type="text/javascript">
+    var valid = false;
+    function validate() {
+        var msg = "";
+        var email = document.myForm.emailId.value;
+        var pwd = document.myForm.password.value;
+        if (email.length == 0 && pwd.length == 0)
+            msg = msg + "Please enter username and password \n";
+        else if (pwd.length == 0)
+            msg = msg + "Please enter password \n";
+        else if (email.length == 0)
+            msg = msg + "Please enter emailId \n";
+        if (msg.length > 0) {
+            window.alert(msg);
+            valid = false;
+        }
+        else
+            valid = true;
+        return valid;
+    }
+</script>
+</body>
+
+</html>
